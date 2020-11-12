@@ -1,6 +1,7 @@
 // encodes bencode using bittorrent specification
 // based on the work by Mark Samman <https://github.com/marksamman/bencode>
-package bencode
+
+package gobencode
 
 import (
 	"bytes"

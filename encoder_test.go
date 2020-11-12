@@ -1,8 +1,11 @@
 // tests encoder.go
 // based on the work by Mark Samman <https://github.com/marksamman/bencode>
-package bencode
+
+package gobencode
 
 import (
+	"bufio"
+	"bytes"
 	"fmt"
 	"math"
 	"testing"
@@ -67,7 +70,7 @@ func TestEncodeListOfInts(t *testing.T) {
 	}
 }
 
-/*func TestEncodeKeySortingOrder(t *testing.T) {
+func TestEncodeKeySortingOrder(t *testing.T) {
 	dict := map[string]interface{}{
 		"Abe": 1,
 		"abe": 1,
@@ -95,9 +98,8 @@ func TestEncodeListOfInts(t *testing.T) {
 
 		if b, err := decoder.ReadByte(); err != nil {
 			t.Error(err)
-		} else if _, err := decoder.readInterfaceType(b); err != nil {
+		} else if _, err := decoder.readByType(b); err != nil {
 			t.Error(err)
 		}
 	}
 }
-*/
